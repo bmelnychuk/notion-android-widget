@@ -1,0 +1,6 @@
+{
+	"Done": "boolean",
+	"Action Item": "text",
+	"Do Date": "date",
+	"Order": "enum (1st | 2nd |3rd). Formula that returns text"
+}
