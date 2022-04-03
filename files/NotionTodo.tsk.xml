@@ -1,0 +1,322 @@
+<TaskerData sr="" dvi="1" tv="5.15.14">
+	<Task sr="task2">
+		<cdate>1643579694480</cdate>
+		<edate>1648992561959</edate>
+		<id>2</id>
+		<nme>NotionTodo</nme>
+		<pri>7</pri>
+		<Action sr="act0" ve="7">
+			<code>129</code>
+			<Str sr="arg0" ve="3">const d = new Date().toISOString();
+setLocal("today", d);</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="45"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>339</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_data
+Data
+Data that the server responded from the HTTP request.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">https://api.notion.com/v1/databases/your_database_id/query</Str>
+			<Str sr="arg3" ve="3">Notion-Version:2021-08-16
+Authorization:Bearer your_secret_token</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"> {
+     "page_size": 100,
+     "filter": {
+         "and": [
+             {
+                 "property": "Done",
+                 "checkbox": {
+                     "equals": false
+                 }
+             },
+             {
+                 "or": [
+                     {
+                         "property": "Do Date",
+                         "date": {
+                             "on_or_before": "%today"
+                         }
+                     },
+                     {
+                         "property": "Do Date",
+                         "date": {
+                             "is_empty": true
+                         }
+                     }
+                 ]
+             }
+         ]
+     },
+     "sorts": [
+       {
+         "property": "Order",
+         "direction": "ascending"
+       },
+        {
+         "property": "Action Item",
+         "direction": "ascending"
+       }
+     ]
+ }</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>1446874931</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<Average>&lt;null&gt;</Average>
+					<Average-type>java.lang.String</Average-type>
+					<Field>results.properties.Action Item.title.plain_text(),results.properties.Order.formula.string(),results.id()</Field>
+					<Field-type>java.lang.String</Field-type>
+					<FilterInvert>false</FilterInvert>
+					<FilterInvert-type>java.lang.Boolean</FilterInvert-type>
+					<GetParentValues>false</GetParentValues>
+					<GetParentValues-type>java.lang.Boolean</GetParentValues-type>
+					<InputFormat>0</InputFormat>
+					<InputFormat-type>java.lang.String</InputFormat-type>
+					<JoinOutputArray>&lt;null&gt;</JoinOutputArray>
+					<JoinOutputArray-type>java.lang.String</JoinOutputArray-type>
+					<Json>%http_data</Json>
+					<Json-type>java.lang.String</Json-type>
+					<JsonRootVariable>json</JsonRootVariable>
+					<JsonRootVariable-type>java.lang.String</JsonRootVariable-type>
+					<MatchField>&lt;null&gt;</MatchField>
+					<MatchField-type>java.lang.String</MatchField-type>
+					<MatchValue>&lt;null&gt;</MatchValue>
+					<MatchValue-type>java.lang.String</MatchValue-type>
+					<MatchesCaseInsensitive>false</MatchesCaseInsensitive>
+					<MatchesCaseInsensitive-type>java.lang.Boolean</MatchesCaseInsensitive-type>
+					<MatchesContainsAll>false</MatchesContainsAll>
+					<MatchesContainsAll-type>java.lang.Boolean</MatchesContainsAll-type>
+					<MatchesExact>false</MatchesExact>
+					<MatchesExact-type>java.lang.Boolean</MatchesExact-type>
+					<MatchesRegex>false</MatchesRegex>
+					<MatchesRegex-type>java.lang.Boolean</MatchesRegex-type>
+					<Max>&lt;null&gt;</Max>
+					<Max-type>java.lang.String</Max-type>
+					<MaxResults>&lt;null&gt;</MaxResults>
+					<MaxResults-type>java.lang.String</MaxResults-type>
+					<Min>&lt;null&gt;</Min>
+					<Min-type>java.lang.String</Min-type>
+					<Query>&lt;null&gt;</Query>
+					<Query-type>java.lang.String</Query-type>
+					<Separator>,</Separator>
+					<Separator-type>java.lang.String</Separator-type>
+					<SimpleMode>false</SimpleMode>
+					<SimpleMode-type>java.lang.Boolean</SimpleMode-type>
+					<SortArrayInvert>false</SortArrayInvert>
+					<SortArrayInvert-type>java.lang.Boolean</SortArrayInvert-type>
+					<SortArrayKey>&lt;null&gt;</SortArrayKey>
+					<SortArrayKey-type>java.lang.String</SortArrayKey-type>
+					<SortArrayObjectKey>&lt;null&gt;</SortArrayObjectKey>
+					<SortArrayObjectKey-type>java.lang.String</SortArrayObjectKey-type>
+					<Sum>&lt;null&gt;</Sum>
+					<Sum-type>java.lang.String</Sum-type>
+					<VariableName>text(),priority(),ids()</VariableName>
+					<VariableName-type>java.lang.String</VariableName-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Input Format: Json
+Json: %http_data
+Fields: results.properties.Action Item.title.plain_text(),results.properties.Order.formula.string(),results.id()
+Json Root Variable: json
+Variable Name: text(),priority(),ids()
+Separator: ,</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ids()
+Json Values
+Values of the fields you got from the json text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%json
+Json Root
+The whole json object that was used as input&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%priority()
+Json Values
+Values of the fields you got from the json text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%text()
+Json Values
+Values of the fields you got from the json text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>Json Field VariableName Separator JsonRootVariable InputFormat plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>3fbb2521-6d83-4ed3-9e5e-166f86766994</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autotools.intent.IntentJson</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autotools</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autotools.activity.ActivityConfigJson</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>1508929357</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<ArraysFilter>&lt;null&gt;</ArraysFilter>
+					<ArraysFilter-type>java.lang.String</ArraysFilter-type>
+					<ArraysItemSeparator>,</ArraysItemSeparator>
+					<ArraysItemSeparator-type>java.lang.String</ArraysItemSeparator-type>
+					<ArraysUnique>false</ArraysUnique>
+					<ArraysUnique-type>java.lang.Boolean</ArraysUnique-type>
+					<InputArraysMan>%ids()|%text()|%priority()</InputArraysMan>
+					<InputArraysMan-type>java.lang.String</InputArraysMan-type>
+					<InputIsFile>false</InputIsFile>
+					<InputIsFile-type>java.lang.Boolean</InputIsFile-type>
+					<JoinMergedArrays>&lt;null&gt;</JoinMergedArrays>
+					<JoinMergedArrays-type>java.lang.String</JoinMergedArrays-type>
+					<JoinOutputArray>&lt;null&gt;</JoinOutputArray>
+					<JoinOutputArray-type>java.lang.String</JoinOutputArray-type>
+					<MatchesCaseInsensitive>false</MatchesCaseInsensitive>
+					<MatchesCaseInsensitive-type>java.lang.Boolean</MatchesCaseInsensitive-type>
+					<MatchesContainsAll>false</MatchesContainsAll>
+					<MatchesContainsAll-type>java.lang.Boolean</MatchesContainsAll-type>
+					<MatchesExact>false</MatchesExact>
+					<MatchesExact-type>java.lang.Boolean</MatchesExact-type>
+					<MatchesRegex>false</MatchesRegex>
+					<MatchesRegex-type>java.lang.Boolean</MatchesRegex-type>
+					<MergeArrays>true</MergeArrays>
+					<MergeArrays-type>java.lang.Boolean</MergeArrays-type>
+					<MergeFormat>&lt;null&gt;</MergeFormat>
+					<MergeFormat-type>java.lang.String</MergeFormat-type>
+					<MergedArrayJoiner>|</MergedArrayJoiner>
+					<MergedArrayJoiner-type>java.lang.String</MergedArrayJoiner-type>
+					<MergedArrayName>todolist</MergedArrayName>
+					<MergedArrayName-type>java.lang.String</MergedArrayName-type>
+					<OnlyNewClearForAll>false</OnlyNewClearForAll>
+					<OnlyNewClearForAll-type>java.lang.Boolean</OnlyNewClearForAll-type>
+					<OnlyNewClearForName>false</OnlyNewClearForName>
+					<OnlyNewClearForName-type>java.lang.Boolean</OnlyNewClearForName-type>
+					<OnlyNewName>&lt;null&gt;</OnlyNewName>
+					<OnlyNewName-type>java.lang.String</OnlyNewName-type>
+					<OutputSeparator>,</OutputSeparator>
+					<OutputSeparator-type>java.lang.String</OutputSeparator-type>
+					<PopPosition>&lt;null&gt;</PopPosition>
+					<PopPosition-type>java.lang.String</PopPosition-type>
+					<Push>&lt;null&gt;</Push>
+					<Push-type>java.lang.String</Push-type>
+					<PushPosition>&lt;null&gt;</PushPosition>
+					<PushPosition-type>java.lang.String</PushPosition-type>
+					<Randomize>false</Randomize>
+					<Randomize-type>java.lang.Boolean</Randomize-type>
+					<Separator>|</Separator>
+					<Separator-type>java.lang.String</Separator-type>
+					<SortArraysInvertMan>false</SortArraysInvertMan>
+					<SortArraysInvertMan-type>java.lang.Boolean</SortArraysInvertMan-type>
+					<SortArraysMan>false</SortArraysMan>
+					<SortArraysMan-type>java.lang.Boolean</SortArraysMan-type>
+					<SortArraysOutputNamesMan>ids,text,priority</SortArraysOutputNamesMan>
+					<SortArraysOutputNamesMan-type>java.lang.String</SortArraysOutputNamesMan-type>
+					<VerticalMode>false</VerticalMode>
+					<VerticalMode-type>java.lang.Boolean</VerticalMode-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Input Arrays: %ids()|%text()|%priority()
+Separator: |
+Item Separator: ,
+Names: ids,text,priority
+Output Variables Separator: ,
+Merge Arrays: true
+Merged Array Name: todolist
+Merged Array Joiner: |</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ids()
+ids
+ids&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%priority()
+priority
+priority&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%text()
+text
+text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%todolist()
+Merged Array
+Result of merging all of the input arrays&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>InputArraysMan SortArraysOutputNamesMan OutputSeparator Separator MergedArrayName MergedArrayJoiner ArraysItemSeparator plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>41ab7da9-7326-4d1f-86cc-98f7d6622527</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autotools.intent.IntentSortArrays</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autotools</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autotools.activity.ActivityConfigSortArrays</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Success</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>1186637727</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Set: NotionTodoList</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>org.kustom.tasker.VAR_NAME org.kustom.tasker.VAR_VALUE</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<org.kustom.tasker.VAR_NAME>NotionTodoList</org.kustom.tasker.VAR_NAME>
+					<org.kustom.tasker.VAR_NAME-type>java.lang.String</org.kustom.tasker.VAR_NAME-type>
+					<org.kustom.tasker.VAR_VALUE>%todolist()</org.kustom.tasker.VAR_VALUE>
+					<org.kustom.tasker.VAR_VALUE-type>java.lang.String</org.kustom.tasker.VAR_VALUE-type>
+					<org.kustom.tasker.extra.INT_VERSION_CODE>357121814</org.kustom.tasker.extra.INT_VERSION_CODE>
+					<org.kustom.tasker.extra.INT_VERSION_CODE-type>java.lang.Integer</org.kustom.tasker.extra.INT_VERSION_CODE-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">org.kustom.widget</Str>
+			<Str sr="arg2" ve="3">org.kustom.lib.editor.tasker.EditVarActivity</Str>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<cls>notion.local.id.MainActivity</cls>
+			<pkg>notion.id</pkg>
+		</Img>
+	</Task>
+</TaskerData>
